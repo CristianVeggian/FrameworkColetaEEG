@@ -205,11 +205,10 @@ def coletar(window, values, user):
     board.stop_stream()
     board.release_session()
 
-    #eeg_channel_indices = [i for i in range(0,user['channels'])]  # Índices dos canais EEG desejados
     eeg_data = [data[i] for i in range(1,user['number_channels']+1)]
-    timestamps = data[22]
-    events = data[23]
-    
+    timestamps = data[len(data)-2]
+    events = data[len(data)-1]
+
     #normalização dos dados de tempo
     timestamps = [i - timestamps[0] for i in timestamps]
 
