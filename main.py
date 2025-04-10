@@ -212,7 +212,7 @@ def coletar(window, values, user):
     #normalização dos dados de tempo
     timestamps = [i - timestamps[0] for i in timestamps]
 
-    user_data_file = path.join('users', f'{user["nome"]}.csv')
+    user_data_file = path.join('users', 'data', f'{user["nome"]}.csv')
 
     with open(user_data_file, mode='a', newline='') as arquivo_csv:
         writer = csv.writer(arquivo_csv)
